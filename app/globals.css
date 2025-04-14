@@ -3,8 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --background-color-cream: #e14b4b;
 }
 
+.bg-cream {
+  background-color: var(--background-color-cream);
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
