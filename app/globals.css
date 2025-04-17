@@ -3,12 +3,52 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --background-color-cream: #e14b4b;
+  --background-color-cream: #f1e7e7;
+  --background-color-yellow: #fffece;
+  --background-color-gray: #b6b3b3;
+
+  --text-color-primary: #4b4b4b;
+  --background-button: #e69db8;
+  --background-color-container: #1f1f1f;
+  --text-color-secundary: #e69db8;
+  --text-color-hover: #5b5858;
+  --bg-color-hover: #f1bccf;
 }
 
 .bg-cream {
   background-color: var(--background-color-cream);
 }
+
+.bg-gray {
+  background-color: var(--background-color-gray);
+}
+
+.bg-yellow {
+  background-color: var(--background-color-yellow);
+}
+
+.primary-color {
+  color: var(--text-color-primary);
+}
+.secundary-color {
+  color: var(--text-color-secundary);
+}
+
+.hover-color:hover {
+  color: var(--text-color-hover);
+}
+.background-button {
+  background-color: var(--background-button);
+}
+
+.background-container {
+  background-color: var(--background-color-container);
+}
+
+.hover-bg:hover {
+  background-color: var(--bg-color-hover);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -27,4 +67,67 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul li {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+ul li:hover {
+  color: var(--background-button);
+  font-weight: bold;
+}
+
+/* WRITE AND ERASE EFFECT */
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid black;
+  width: 0;
+  font-size: 1.8rem;
+  animation: typing 5s steps(25, end) 0.2s infinite alternate,
+    blink-caret 0.9s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 25ch;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: #4b4b4b;
+  }
+  50% {
+    border-color: #4b4b4b;
+  }
+}
+
+/* 
+SECTION ABOUT ME */
+
+@keyframes fadeInRotate {
+  0% {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.animate-fadeInRotate {
+  animation: fadeInRotate 1s ease-out forwards;
 }
