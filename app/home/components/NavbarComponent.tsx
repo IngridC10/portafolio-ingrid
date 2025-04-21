@@ -87,7 +87,7 @@ const NavbarComponent = () => {
                 <a
                   href={item.href}
                   onClick={() => handleSelectItem(item.id)}
-                  className={`transition-all ${
+                  className={`transition-all primary-color   ${
                     activeState === item.id
                       ? "font-bold underline secundary-color"
                       : "hover:font-bold hover:secundary-color"
