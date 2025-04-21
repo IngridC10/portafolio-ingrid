@@ -24,7 +24,7 @@ const HeroComponent = () => {
                 href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=calzada.ingrid@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[230px] h-[50px] text-lg  lg:text-xl font-bold background-button  hover-color  cursor-pointer rounded-3xl mt-4 flex items-center justify-center"
+                className="w-[230px] h-[50px] text-lg  text-black  lg:text-xl font-bold background-button  hover-color  cursor-pointer rounded-3xl mt-4 flex items-center justify-center"
               >
                 CONTACTO
               </a>
@@ -32,7 +32,7 @@ const HeroComponent = () => {
                 href="/CV CALZADA INGRID.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-[230px] h-[50px] text-lg  lg:text-xl font-bold background-button cursor-pointer hover-color  rounded-3xl mt-4 flex items-center justify-center"
+                className="w-[230px] h-[50px] text-lg text-black  lg:text-xl font-bold background-button cursor-pointer hover-color  rounded-3xl mt-4 flex items-center justify-center"
               >
                 DESCARGAR CV
               </a>

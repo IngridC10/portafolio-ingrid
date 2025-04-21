@@ -31,7 +31,7 @@ const AboutMe = () => {
       className="h-full  min-h-screen md:min-h-[75vh] lg:min-h-[60vh] xl:min-h-screen p-6  xl:p-0 bg-yellow scroll-mt-36 flex justify-center items-center px-4"
     >
       <div className="container flex flex-col items-center justify-center">
-        <h1 className="text-center font-bold  text-2xl xl:text-3xl  mb-0  lg:mb-10">
+        <h1 className="text-center  text-black font-bold  text-2xl xl:text-3xl  mb-0  lg:mb-10">
           Sobre mí
         </h1>
 

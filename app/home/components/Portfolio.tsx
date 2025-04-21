@@ -17,7 +17,7 @@ const portfolioData = [
     description:
       "Mi portafolio web personal, donde se encuentran algunos de mis proyectos más destacados, mis habilidades técnicas y un poco sobre mi formación.",
     image: "/images/home/ingrid.png",
-    link: "https://mi-proyecto-demo2.com",
+    link: "https://portafolio-ingrid.vercel.app/",
     hasGallery: false,
   },
   {

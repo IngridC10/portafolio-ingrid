@@ -23,6 +23,10 @@ const NavbarComponent = () => {
     setIsMenuOpen(false);
   };
 
+  const handleLogoClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="bg-cream h-[120px] w-full fixed z-50 flex items-center">
       <div className="container mx-auto flex justify-between items-center px-6">
@@ -36,7 +40,7 @@ const NavbarComponent = () => {
           />
         </Link>
 
-        <ul className="hidden xl:flex text-primary-color gap-6 text-lg">
+        <ul className="hidden xl:flex primary-color gap-6 text-lg">
           {navItems.map((item) => (
             <li key={item.id}>
               <a
@@ -55,7 +59,7 @@ const NavbarComponent = () => {
         </ul>
 
         <div
-          className="block xl:hidden text-3xl text-primary-color"
+          className="block xl:hidden text-3xl primary-color "
           onClick={handleToggleMenu}
         >
           <FaBars />
@@ -65,7 +69,7 @@ const NavbarComponent = () => {
       {isMenuOpen && (
         <div className="fixed top-0 left-0 w-full h-screen bg-cream z-50 menuSlideDown">
           <div className="flex items-center justify-between w-full px-6 py-4">
-            <Link href="/">
+            <Link href="/" onClick={handleLogoClick}>
               <Image src={Logo} alt="logo" height={120} width={120} />
             </Link>
 
