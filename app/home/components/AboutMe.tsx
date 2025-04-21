@@ -52,13 +52,14 @@ const AboutMe = () => {
           <div className="w-full xl:w-1/2 flex justify-center xl:justify-end px-2">
             <div className="max-w-[600px]">
               <p className="text-black text-base xl:text-xl text-justify leading-relaxed xl:leading-10">
-                Soy estudiante de la carrera de Negocios Internacionales y, al
+                Soy egresada de la carrera de Negocios Internacionales y, al
                 mismo tiempo, me estoy formando de manera autodidacta en el área
-                de <strong>Desarrollo Web,</strong> con un enfoque especial en
-                la programación Frontend. Mi principal objetivo es ingresar al
-                mundo laboral del desarrollo web, adquirir experiencia práctica,
-                y fortalecer mi perfil profesional para crecer dentro del sector
-                tecnológico.
+                de <strong>Desarrollo Web</strong>, con un enfoque especial en
+                la programación Frontend. Actualmente, busco integrarme al
+                sector tecnológico, adquirir experiencia práctica en entornos
+                reales y seguir fortaleciendo mi perfil profesional con el
+                objetivo de aportar valor y crecer de forma constante en esta
+                industria.
                 <br />
                 <br />
                 <span className="hidden xl:inline">

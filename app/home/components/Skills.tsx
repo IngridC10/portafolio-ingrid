@@ -10,10 +10,17 @@ import Tailwind from "../../../public/images/home/tailwind.png";
 import Jira from "../../../public/images/home/jira.png";
 import Trello from "../../../public/images/home/trello.png";
 import Puntos from "../../../public/images/home/puntos.png";
+import ReactJs from "../../../public/images/home/reactjs.webp";
+import Next from "../../../public/images/home/next.png";
+import Angular from "../../../public/images/home/angular.png";
 
 const skills = [
   { src: Html, alt: "HTML", label: "HTML 5", height: 400, width: 155 },
   { src: Js, alt: "JavaScript", label: "JavaScript", height: 400, width: 155 },
+  { src: ReactJs, alt: "React", label: "React", height: 400, width: 155 },
+  { src: Next, alt: "Next", label: "Next", height: 400, width: 155 },
+  { src: Angular, alt: "Angular", label: "Angular", height: 400, width: 155 },
+
   { src: Css, alt: "CSS", label: "Css", height: 400, width: 155 },
   {
     src: Tailwind,
@@ -32,7 +39,7 @@ const Skills = () => {
   }, []);
   return (
     <section
-      className="relative  h-[1785px]    xl:h-[720px] scroll-mt-36 flex flex-col justify-center items-center bg-cream px-4 "
+      className="relative  h-[2620px]    xl:h-[1000px] scroll-mt-36 flex flex-col justify-center items-center bg-cream px-4 "
       id="skills"
     >
       <div className="absolute left-10 top-1/2 transform -translate-y-1/2  hidden xl:block ">
@@ -51,10 +58,10 @@ const Skills = () => {
       </h1>
 
       <div className="flex flex-col gap-10">
-        {[0, 1].map((row) => (
+        {[0, 1, 2].map((row) => (
           <div
             key={row}
-            className=" flex flex-col    xl:flex-row     gap-6 justify-center"
+            className="flex flex-col xl:flex-row gap-6 justify-center"
           >
             {skills.slice(row * 3, row * 3 + 3).map((skill) => (
               <div
