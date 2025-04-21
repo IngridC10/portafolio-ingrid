@@ -81,7 +81,7 @@ const NavbarComponent = () => {
             </button>
           </div>
 
-          <ul className="flex flex-col items-center justify-start h-full gap-18 text-xl text-primary-color">
+          <ul className="flex flex-col items-center justify-start h-full gap-18 text-xl primary-color">
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
