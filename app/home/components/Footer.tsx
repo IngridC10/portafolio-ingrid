@@ -5,7 +5,7 @@ import Whatsapp from "../../../public/images/home/whatsapp.png";
 const Footer = () => {
   return (
     <>
-      <footer className="w-full flex justify-center items-center h-[100px] bg-cream relative">
+      <footer className="w-full flex justify-center items-start lg:items-center h-[56px]  lg:h-[100px] bg-cream relative">
         <h1 className="text-black text-sm">
           Copyright © | Coded with 💗 by Ingrid Calzada
         </h1>
@@ -22,7 +22,7 @@ const Footer = () => {
           alt="WhatsApp"
           width={80}
           height={50}
-          className="hover:scale-110 transition-transform duration-300"
+          className="hover:scale-110  hidden lg:block  transition-transform duration-300"
         />
       </a>
     </>

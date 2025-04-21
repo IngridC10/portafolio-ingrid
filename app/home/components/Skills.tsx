@@ -32,24 +32,30 @@ const Skills = () => {
   }, []);
   return (
     <section
-      className="relative h-[720px] scroll-mt-36 flex flex-col justify-center items-center bg-cream px-4 py-16"
+      className="relative  h-[1785px]    xl:h-[720px] scroll-mt-36 flex flex-col justify-center items-center bg-cream px-4 "
       id="skills"
     >
-      <div className="absolute left-10 top-1/2 transform -translate-y-1/2">
+      <div className="absolute left-10 top-1/2 transform -translate-y-1/2  hidden xl:block ">
         <Image src={Puntos} alt="decoration-left" height={400} width={80} />
       </div>
 
-      <div className="absolute right-10 top-1/2 transform -translate-y-1/2 hidden md:block">
+      <div className="absolute right-10 top-1/2 transform -translate-y-1/2 hidden xl:block">
         <Image src={Puntos} alt="decoration-right" height={400} width={80} />
       </div>
 
-      <h1 className="text-3xl text-black font-bold mb-12" data-aos="fade-up">
+      <h1
+        className="text-2xl xl:text-3xl  text-black font-bold mb-12"
+        data-aos="fade-up"
+      >
         Habilidades
       </h1>
 
       <div className="flex flex-col gap-10">
         {[0, 1].map((row) => (
-          <div key={row} className="flex gap-6 justify-center">
+          <div
+            key={row}
+            className=" flex flex-col    xl:flex-row     gap-6 justify-center"
+          >
             {skills.slice(row * 3, row * 3 + 3).map((skill) => (
               <div
                 key={skill.alt}

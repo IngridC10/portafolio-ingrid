@@ -41,18 +41,21 @@ const Education = () => {
   return (
     <section
       id="education"
-      className="relative h-[520px] scroll-mt-36  flex flex-col justify-center items-center bg-yellow px-4 py-16"
+      className="relative  h-[1042px] xl:h-[520px] scroll-mt-36  flex flex-col justify-center items-center bg-yellow px-4 "
     >
       <div className="flex flex-col mt-6 ">
-        <h1 className="text-3xl text-black font-bold text-center ">
+        <h1 className="text-2xl xl:text-3xl  text-black font-bold text-center ">
           Formación
         </h1>
         {[0, 1].map((row) => (
-          <div key={row} className="flex gap-6 justify-center">
+          <div
+            key={row}
+            className=" flex-col flex xl:flex-row  gap-0  xl:gap-6 justify-center"
+          >
             {skills.slice(row * 3, row * 3 + 3).map((skill) => (
               <div
                 key={skill.alt}
-                className="w-[260px] mt-14 h-[280px] flex flex-col items-center justify-center rounded-3xl bg-white cursor-pointer transition duration-300 hover:shadow-xl hover:border-4 hover:border-pink-300"
+                className="w-[260px] mt-6  xl:mt-14 h-[280px] flex flex-col items-center justify-center rounded-3xl bg-white cursor-pointer transition duration-300 hover:shadow-xl hover:border-4 hover:border-pink-300"
                 data-aos="fade-up"
               >
                 <Image

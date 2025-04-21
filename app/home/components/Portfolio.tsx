@@ -80,19 +80,18 @@ export default function Portfolio() {
   const [openGalleryState, setOpenGalleryState] = useState<string[] | null>(
     null
   );
+
   const [currentImageIndexState, setCurrentImageIndexState] = useState(0);
 
   const handleOpenGallery = (images: string[]) => {
     setOpenGalleryState(images);
     setCurrentImageIndexState(0);
-
     document.body.style.overflow = "hidden";
   };
 
   const handleCloseGallery = () => {
     setOpenGalleryState(null);
     setCurrentImageIndexState(0);
-
     document.body.style.overflow = "";
   };
 
@@ -106,27 +105,41 @@ export default function Portfolio() {
     );
   };
 
+  const handleImageClick = () => {
+    const image = document.querySelector(".gallery-image");
+    if (image) {
+      image.classList.toggle("zoomed");
+      document.body.style.overflow = image.classList.contains("zoomed")
+        ? "hidden"
+        : "";
+    }
+  };
   return (
     <section
       id="projects"
-      className="min-h-screen scroll-mt-36  flex justify-center bg-cream mx-auto py-10 px-4 sm:px-8"
+      className="min-h-screen scroll-mt-36 flex justify-center bg-cream mx-auto py-10 px-4 sm:px-8"
     >
       <div className="container flex flex-col justify-center items-center">
-        <h1 className="text-3xl font-bold text-center mb-10">Mis Proyectos</h1>
+        <h1 className="text-2xl xl:text-3xl font-bold text-center mb-4 xl:mb-10">
+          Mis Proyectos
+        </h1>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {portfolioData.map((project) => (
             <div
               key={project.id}
-              className="bg-gray-100  w-[440px] rounded-2xl shadow-md p-6 hover:shadow-xl transition flex flex-col h-full"
+              className="bg-gray-100 w-[347px]  xl:w-[398px] 2xl:w-[440px] rounded-2xl shadow-md p-6 hover:shadow-xl transition flex flex-col h-full"
             >
               <img
                 src={project.image}
                 alt={project.title}
                 className="w-full max-h-[300px] object-cover rounded-xl"
+                onClick={() => handleOpenGallery(project.gallery!)}
               />
-              <h2 className="text-xl font-semibold mt-4">{project.title}</h2>
-              <p className="text-black mt-2 min-h-[60px]">
+              <h2 className="text-lg xl:text-xl font-semibold mt-4">
+                {project.title}
+              </h2>
+              <p className="text-black text-base xl:text-lg text-justify mt-2 min-h-[60px]">
                 {project.description}
               </p>
 
@@ -134,7 +147,7 @@ export default function Portfolio() {
                 {project.hasGallery ? (
                   <button
                     onClick={() => handleOpenGallery(project.gallery!)}
-                    className="mt-4 px-4 py-2 background-button hover-bg text-black cursor-pointer font-bold rounded-full  transition"
+                    className="mt-4 px-4 py-2 background-button hover-bg text-black cursor-pointer font-bold rounded-full transition"
                   >
                     Ver galería
                   </button>
@@ -152,25 +165,25 @@ export default function Portfolio() {
             </div>
           ))}
         </div>
-
         {openGalleryState && (
-          <div className="fixed inset-0 backdrop-blur-2xl   bg-black/30  flex items-center justify-center z-70 px-4">
-            <div className="bg-yellow p-8 rounded-xl max-w-7xl max-h-[90vh] w-full relative flex flex-col items-center  overflow-y-auto">
-              <button
-                onClick={handleCloseGallery}
-                className="absolute top-2 right-6 text-black text-3xl font-bold"
-              >
-                ×
-              </button>
-              <h3 className="text-2xl text-black font-semibold mb-4">
+          <div className="fixed inset-0 backdrop-blur-2xl bg-black/30 flex items-center justify-center z-70 px-4">
+            <button
+              onClick={handleCloseGallery}
+              className="absolute top-4 right-2 text-black text-4xl font-bold z-[9999] px-3 py-1"
+            >
+              ×
+            </button>
+
+            <div className="bg-yellow p-8 rounded-xl max-w-7xl max-h-[90vh] w-full relative flex flex-col items-center overflow-y-auto">
+              <h3 className="text-xl xl:text-2xl text-black font-semibold mb-4">
                 Galería
               </h3>
 
-              <div className="flex items-center justify-center w-full relative">
+              <div className="relative w-full flex items-center justify-center">
                 <button
                   onClick={handlePrev}
                   disabled={currentImageIndexState === 0}
-                  className="absolute left-0 bg-pink-300 text-black  rounded-full w-12 h-12 flex items-center justify-center text-4xl transition disabled:opacity-30 disabled:cursor-not-allowed"
+                  className="hidden xl:flex absolute left-0 bg-pink-300 text-black rounded-full w-12 h-12 items-center justify-center text-4xl transition disabled:opacity-30 disabled:cursor-not-allowed"
                 >
                   ‹
                 </button>
@@ -178,7 +191,8 @@ export default function Portfolio() {
                 <img
                   src={openGalleryState[currentImageIndexState]}
                   alt={`Imagen ${currentImageIndexState}`}
-                  className="max-h-[70vh] max-w-full object-contain rounded-xl"
+                  className="gallery-image max-h-[70vh] max-w-full object-contain rounded-xl"
+                  onClick={handleImageClick}
                 />
 
                 <button
@@ -186,7 +200,27 @@ export default function Portfolio() {
                   disabled={
                     currentImageIndexState === openGalleryState.length - 1
                   }
-                  className="absolute right-0 bg-pink-300 text-black rounded-full w-12 h-12 flex items-center justify-center text-4xl transition disabled:opacity-30 disabled:cursor-not-allowed"
+                  className="hidden xl:flex absolute right-0 bg-pink-300 text-black rounded-full w-12 h-12 items-center justify-center text-4xl transition disabled:opacity-30 disabled:cursor-not-allowed"
+                >
+                  ›
+                </button>
+              </div>
+
+              <div className="flex xl:hidden justify-center gap-4 mt-4">
+                <button
+                  onClick={handlePrev}
+                  disabled={currentImageIndexState === 0}
+                  className="bg-pink-300 text-black rounded-full w-12 h-12 flex items-center justify-center text-4xl transition disabled:opacity-30 disabled:cursor-not-allowed"
+                >
+                  ‹
+                </button>
+
+                <button
+                  onClick={handleNext}
+                  disabled={
+                    currentImageIndexState === openGalleryState.length - 1
+                  }
+                  className="bg-pink-300 text-black rounded-full w-12 h-12 flex items-center justify-center text-4xl transition disabled:opacity-30 disabled:cursor-not-allowed"
                 >
                   ›
                 </button>

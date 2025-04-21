@@ -95,6 +95,15 @@ ul li:hover {
     blink-caret 0.9s step-end infinite;
 }
 
+.typing-animation {
+  font-size: 15px;
+}
+
+@media (min-width: 1280px) {
+  .typing-animation {
+    font-size: 1.8rem;
+  }
+}
 @keyframes typing {
   from {
     width: 0;
@@ -130,4 +139,58 @@ SECTION ABOUT ME */
 
 .animate-fadeInRotate {
   animation: fadeInRotate 1s ease-out forwards;
+}
+
+/* 
+MenuBurger */
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.menuSlideDown {
+  animation: slideDown 1s ease forwards;
+}
+
+/* IMAGE ZOOM */
+
+@media (max-width: 1024px) {
+  .gallery-image.zoomed {
+    transform: scale(1.5);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+.fixed {
+  z-index: 1000 !important;
+}
+
+.gallery-image.zoomed {
+  cursor: zoom-out;
+  width: auto;
+  height: auto;
+}
+
+.gallery-image.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.05);
+  max-width: 100vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  z-index: 9999;
+  cursor: zoom-out;
+  transition: transform 0.3s ease-in-out;
+  object-fit: contain;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  border-radius: 1rem;
 }
