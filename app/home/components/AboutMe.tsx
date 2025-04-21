@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import techgirl from "../../../public/images/Home/techgirl.png";
+import techgirl from "../../../public/images/home/techgirl.png";
 import Image from "next/image";
 
 const AboutMe = () => {
