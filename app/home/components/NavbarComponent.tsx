@@ -74,7 +74,7 @@ const NavbarComponent = () => {
             </Link>
 
             <button
-              className="text-3xl text-primary-color "
+              className="text-3xl primary-color "
               onClick={handleToggleMenu}
             >
               <FaTimes />
