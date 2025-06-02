@@ -74,6 +74,26 @@ const portfolioData = [
     ],
     hasGallery: true,
   },
+
+  {
+    id: 6,
+    title: "TuyruLabs",
+    description:
+      "Dedicada a desarrollar herramientas digitales personalizadas para pequeños emprendedores, con el objetivo de brindarles acceso a tecnología de alta calidad que les permita competir y crecer. .",
+    image: "/images/home/tuyrulabs.png",
+    link: "https://tuyrulabs.com/",
+    hasGallery: false,
+  },
+
+  {
+    id: 7,
+    title: "Lucho Travel Services",
+    description:
+      "Empresa dedicada al transporte turístico de personal, full days, city tours , visitas educativas,entre otros. Cuentan con unidades modernas, con conductores profesionales y con la más importante experiencia adquirida a través del tiempo. ",
+    image: "/images/home/luchotravel.png",
+    link: "https://tuyrulabs.com/",
+    hasGallery: false,
+  },
 ];
 
 export default function Portfolio() {
