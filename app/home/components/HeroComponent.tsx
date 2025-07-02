@@ -29,7 +29,7 @@ const HeroComponent = () => {
                 CONTACTO
               </a>
               <a
-                href="/CV CALZADA INGRID.pdf"
+                href="/CV PROGRAMACION.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-[230px] h-[50px] text-lg text-black  lg:text-xl font-bold background-button cursor-pointer hover-color  rounded-3xl mt-4 flex items-center justify-center"
